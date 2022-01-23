@@ -8,4 +8,4 @@ def find_alphabet_occurrence_array(string):
     return alphabet_occurrence_array
 
 
-print(find_alphabet_occurrence_array("hello my name is sparta"))
+print(find_alphabet_occurrence_array("hello my name is 스파르타"))
