@@ -78,7 +78,7 @@ min_num = min(nums)
 # 최소값의 인덱스 찾기
 min_num_index = nums.index(min_num)
 
-# bisect.bisect_left(배열, 타겟) : 배열에서 타겟을 찾는다.
+# bisect.bisect_left(배열, 타겟) : 배열에서 타겟을 찾는다. 인덱스를 리턴한다.
 # 타겟이 여러개면 왼쪽 인덱스를 리턴한다.
 def binary_search_with_bisect(nums: List[int], target: int) -> int:
     nums.sort()
