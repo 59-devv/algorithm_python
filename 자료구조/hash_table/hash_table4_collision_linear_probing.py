@@ -1,11 +1,16 @@
 # Linear Probing 기법으로 충돌 해결해보기
+import hashlib
 
 hash_table = list([0 for i in range(8)])
 
 
 def get_key(data):
-    return hash(data)
-
+    hash_object = hashlib.sha256()
+    hash_object.update(data.encode())
+    hex_dig = hash_object.hexdigest()
+    # 실제로 변환된 값은 문자열의 형태이고, 16진수이기 때문에
+    # key로 사용하기 위해서는 10진수의 숫자로 변경해주어야 한다.
+    return int(hex_dig, 16)
 
 def hash_function(key):
     return key % 8
