@@ -1,31 +1,19 @@
-# BJ 1920
-from typing import *
+"""
+1부터 N까지의 수를 오름차순으로 쓴 수열 1 2 3 ... N을 생각하자.
+그리고 '+'나 '-', 또는 ' '(공백)을 숫자 사이에 삽입하자(+는 더하기, -는 빼기, 공백은 숫자를 이어 붙이는 것을 뜻한다). 이렇게 만든 수식의 값을 계산하고 그 결과가 0이 될 수 있는지를 살피자.
+N이 주어졌을 때 수식의 결과가 0이 되는 모든 수식을 찾는 프로그램을 작성하라.
 
-n: int = int(input())
-num_list: List = sorted(list(map(int, input().split(" "))))
-m: int = int(input())
-target_list: List = list(map(int, input().split(" ")))
+첫 번째 줄에 테스트 케이스의 개수가 주어진다(<10).
+각 테스트 케이스엔 자연수 N이 주어진다(3 <= N <= 9).
+"""
 
+n = 3
+op = ['+', '-', ' ']
+num_list = [i+1 for i in range(n)]
+op_list = list()
 
-def binary(nums: List, target: int):
-    left: int = 0
-    right: int = len(nums)
-    center: int = left + (right - left) // 2
+for i in op:
+    for j in op:
+        op_list.append([i, j])
 
-    if nums[center] == target:
-        return 1
-    if len(nums) == 1 and nums[0] == target:
-        return 1
-    if len(nums) == 1 and nums[0] != target:
-        return 0
-    if len(nums) == 0:
-        return 0
-
-    if nums[center] > target:
-        return binary(nums[:center], target)
-    else:
-        return binary(nums[center:], target)
-
-
-for i in target_list:
-    print(binary(num_list, i))
+print(op_list)
