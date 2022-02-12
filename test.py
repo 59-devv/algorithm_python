@@ -1,19 +1,10 @@
-"""
-1부터 N까지의 수를 오름차순으로 쓴 수열 1 2 3 ... N을 생각하자.
-그리고 '+'나 '-', 또는 ' '(공백)을 숫자 사이에 삽입하자(+는 더하기, -는 빼기, 공백은 숫자를 이어 붙이는 것을 뜻한다). 이렇게 만든 수식의 값을 계산하고 그 결과가 0이 될 수 있는지를 살피자.
-N이 주어졌을 때 수식의 결과가 0이 되는 모든 수식을 찾는 프로그램을 작성하라.
+# 11004
 
-첫 번째 줄에 테스트 케이스의 개수가 주어진다(<10).
-각 테스트 케이스엔 자연수 N이 주어진다(3 <= N <= 9).
-"""
+num, index = map(int, input().split(" "))
+num_list = list(map(int, input().split(" ")))
 
-n = 3
-op = ['+', '-', ' ']
-num_list = [i+1 for i in range(n)]
-op_list = list()
 
-for i in op:
-    for j in op:
-        op_list.append([i, j])
+# 정렬해서 index 번째 수를 출력하면 된다.
+# 단, index는 1부터 시작한다.
 
-print(op_list)
+print(sorted(num_list)[index-1])
