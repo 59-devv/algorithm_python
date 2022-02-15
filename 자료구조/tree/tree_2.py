@@ -1,7 +1,5 @@
 # 파이썬 객체지향 방법으로 클래스 구현해보기 (링크드 리스트)
 import random
-import time
-
 
 class Node:
     def __init__(self, value):
@@ -151,7 +149,7 @@ for num in bst_nums:
 # 입력한 100개의 숫자 검색
 for num in bst_nums:
     if not binary_tree.search(num):
-        print("잘못만들었어!")
+        print("search failed!")
 
 # 입력한 100개의 숫자 중 10개를 선택해서 삭제함
 delete_nums = set()
@@ -162,4 +160,4 @@ while len(delete_nums) != 10:
 # 선택한 10개의 숫자를 삭제 (삭제 가능 확인)
 for del_num in delete_nums:
     if not binary_tree.delete(del_num):
-        print(f"{del_num}삭제안됨/잘못만들었어!222")
+        print("delete failed")
